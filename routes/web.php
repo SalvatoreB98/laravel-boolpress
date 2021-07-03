@@ -12,11 +12,24 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'mainController@index')->name('main');
 
 Auth::routes();  
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/posts/{id}', 'PostController@show')->name('posts.show');
+Route::get('/create','PostController@create')->name('post.create');
+
+Route::match(['PUT','PATCH'],'/store','PostController@store')->name('post.store');
+
+Route::get('/post/{id}', 'PostController@show')->name('post.show');
+
+// Route::get('/post/{id}', 'PostController@show')->name('post.store');
+
+Route::get('/admin/edit/{id}', 'PostController@edit')->name('post.edit');
+
+Route::match(['PUT','PATCH'],'/update/{post}','PostController@update')->name('post.update');
+
+Route::post('/admin/destroy/', 'PostController@destroy')->name('post.destroy');
+
+
