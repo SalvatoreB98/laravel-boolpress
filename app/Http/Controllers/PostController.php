@@ -10,11 +10,11 @@ class PostController extends Controller
         return view("Post.create");
     }
     public function store(Request $request){
-        $formData = $request->all;
+        $formData = $request->all();
         $newPost = new Post();
         $newPost->fill($formData);
         $newPost->save();
-
+        return redirect('home');
     }
     public function show($id){
         $post = Post::findOrFail($id);
@@ -32,7 +32,7 @@ class PostController extends Controller
     }
     public function destroy($id){
         $post = Post::findOrFail($id);
-        $post->delete;
+        $post->delete();
         return redirect('home');
     }
 }

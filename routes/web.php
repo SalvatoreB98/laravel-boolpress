@@ -30,6 +30,6 @@ Route::get('/admin/edit/{id}', 'PostController@edit')->name('post.edit');
 
 Route::match(['PUT','PATCH'],'/update/{post}','PostController@update')->name('post.update');
 
-Route::post('/admin/destroy/', 'PostController@destroy')->name('post.destroy');
+Route::delete('/admin/destroy/{id}', 'PostController@destroy')->name('post.destroy');
 
 
