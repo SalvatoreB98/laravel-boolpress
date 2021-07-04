@@ -12,6 +12,11 @@
             <label for="title"> DESCRIZIONE </label> <br>
             <textarea name="body" id="" cols="30" rows="10">{{ $post['body'] }} </textarea>
         </div>
+        <select name="category" id="category">
+            @foreach($categories as $category)
+            <option value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach
+        </select>
         <button type="submit" class="btn btn-primary"> Modifica </button>
     </form>
     <form class="d-inline-block" action="{{ route('post.destroy', ['id' => $post->id]) }}" method="post">
