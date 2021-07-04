@@ -10,6 +10,6 @@ class mainController extends Controller
         $data = [
             'posts' => Post::all()
         ];
-        return view('index',$data);
+        return view('home',$data);
     }
 }
