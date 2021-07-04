@@ -14,7 +14,7 @@
         </div>
         <div class="form-group">
             <label for="title"> AUTORE </label> <br>
-            <input type="text" name="author" id="title" value="{{ $post['author] }}">
+            <input type="text" name="author" id="title" value="{{ $post['author'] }}">
         </div>
         <button type="submit" class="btn btn-primary"> Modifica </button>
     </form>
