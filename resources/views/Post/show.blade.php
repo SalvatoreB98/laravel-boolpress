@@ -3,9 +3,9 @@
     <div class="container-fluid">
         <h1>{{ $post->title }}</h1>
         <p>{{ $post->body }}</p>
-        <h4>{{ $post->author }}</h4>
+        <p>By: {{$user ->name}} ({{$user->email}})</p>
         @auth
-            <a href="{{ route('post.edit', $post['id']) }}" class="btn btn-primary mb-3">MODIFICA</a> <br>
+            <a href="{{ route('post.edit', $post['id']) }}" class="btn btn-primary mb-3">Modifica</a> <br>
             <form class="d-inline-block" action="{{ route('post.destroy', ['id' => $post->id]) }}" method="post">
                 @csrf
                 @method('DELETE')

@@ -14,7 +14,7 @@
                     </div>
                     @endif
 
-                    {{ __('Sei amministratore!') }}
+                    <strong>{{ __('Sei amministratore!') }}</strong> 
                 </div>
             </div>
         </div>
@@ -34,7 +34,6 @@
             <div class="mb-5">
                 <h1>{{ $post['title'] }}</h1>
                 <p>{{ $post['body'] }}</p>
-                <p> by: {{$post['author']}}</p>
                 <a href="{{ route('post.show', $post['id']) }}"> DETTAGLI </a>
             </div>
             @endforeach

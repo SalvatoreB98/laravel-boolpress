@@ -12,10 +12,6 @@
             <label for="title"> DESCRIZIONE </label> <br>
             <textarea name="body" id="" cols="30" rows="10">{{ $post['body'] }} </textarea>
         </div>
-        <div class="form-group">
-            <label for="title"> AUTORE </label> <br>
-            <input type="text" name="author" id="title" value="{{ $post['author'] }}">
-        </div>
         <button type="submit" class="btn btn-primary"> Modifica </button>
     </form>
     <form class="d-inline-block" action="{{ route('post.destroy', ['id' => $post->id]) }}" method="post">

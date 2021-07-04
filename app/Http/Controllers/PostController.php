@@ -7,7 +7,7 @@ use App\Post;
 class PostController extends Controller
 {
     public function create(){
-        return view("Post.create");
+        return view("post.create");
     }
     public function store(Request $request){
         $formData = $request->all();
@@ -18,7 +18,8 @@ class PostController extends Controller
     }
     public function show($id){
         $post = Post::findOrFail($id);
-        return view('post.show', compact('post'));
+        $user = $post->user;
+        return view('post.show', ["post"=> $post, "user"=> $user]);
     }
     public function edit($id){
         $post = Post::findOrFail($id);
