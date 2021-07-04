@@ -10,15 +10,17 @@
         </div>
         <div class="form-group">
             <label for="title"> DESCRIZIONE </label> <br>
-            <textarea name="body" id="" cols="30" rows="10">{{ $post['body'] }} </textarea>
+            <textarea class="form-control" name="body" id="" wrap="hard" rows="10" style="white-space: pre-wrap; min-width: 75%' ">{{ $post['body'] }} </textarea>
         </div>
-        <select  name="category_id" id="category">
+        <select name="category_id" id="category">
             @foreach($categories as $category)
             <option value="{{$category->id}}">{{$category->name}}</option>
             @endforeach
         </select>
-        <div class="mt-3"> <button type="submit" class="btn btn-primary"> Modifica </button> </div>
-        
+        <br>
+        <div class="mt-3 d-inline-block">
+            <button type="submit" class="btn btn-primary"> Modifica </button>
+        </div>
     </form>
     <form class="d-inline-block" action="{{ route('post.destroy', ['id' => $post->id]) }}" method="post">
         @csrf
