@@ -2,9 +2,9 @@
 
 @section('content')
 @auth
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="container-fluid">
+    <div class="container-fluid justify-content-center">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Area:') }}</div>
 
@@ -37,6 +37,10 @@
         @endauth
 
         <div class="container-fluid">
+            @if(count($posts)==0)
+            <h5>Ancora nessun post disponibile</h5>
+
+            @endif
             @foreach ($posts as $post)
             <div class="mb-5">
                 <h1>{{ $post['title'] }}</h1>

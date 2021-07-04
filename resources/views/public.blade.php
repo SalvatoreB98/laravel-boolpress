@@ -2,7 +2,6 @@
 @section('content')
 <div class="flex-center position-ref full-height">
 
-
     <div class="container-fluid">
         <div class="title m-b-md">
         </div>
