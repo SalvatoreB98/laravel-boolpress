@@ -1,27 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-    @auth
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Area:') }}</div>
+@auth
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Area:') }}</div>
 
-                    <div class="card-body">
-                        @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                        @endif
-
-                        <strong>{{ __('Sei amministratore!') }}</strong>
+                <div class="card-body">
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
                     </div>
+                    @endif
+
+                    <strong>{{ __('Sei amministratore!') }}</strong>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-    @endauth
+    </div>
+    <div class="container-fluid">
+        @endauth
 
 
         @auth
@@ -40,7 +40,7 @@
             @foreach ($posts as $post)
             <div class="mb-5">
                 <h1>{{ $post['title'] }}</h1>
-                <p>{{ $post['body'] }}</p>
+                <p>{!! nl2br(e($post->body)) !!}</p>
                 <a href="{{ route('post.show', $post['id']) }}"> DETTAGLI </a>
             </div>
             @endforeach
