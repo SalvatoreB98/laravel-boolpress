@@ -1,25 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Area:') }}</div>
+    @auth
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Area:') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
+                    <div class="card-body">
+                        @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                        @endif
+
+                        <strong>{{ __('Sei amministratore!') }}</strong>
                     </div>
-                    @endif
-
-                    <strong>{{ __('Sei amministratore!') }}</strong> 
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid">
+        <div class="container-fluid">
+    @endauth
+
+
+        @auth
         <div class="card  mt-5 mb-5">
             <div class="card-header">
                 AGGIUNGI UN NUOVO POST
@@ -29,6 +34,8 @@
                 <a href="{{route('post.create')}}" class="btn btn-primary"> ADD </a>
             </div>
         </div>
+        @endauth
+
         <div class="container-fluid">
             @foreach ($posts as $post)
             <div class="mb-5">
