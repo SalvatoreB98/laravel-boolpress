@@ -12,7 +12,7 @@
         </div>
         <div class="form-group">
             <label for="title"> DESCRIZIONE </label> <br>
-            <textarea name="body" id="" cols="30" rows="10" style="white-space: pre-wrap;"> </textarea>
+            <textarea class="form-control" name="body" id="" cols="30" rows="10" style="white-space: pre-wrap;"> </textarea>
         </div>
         <div class="form-group">
             <label for="category"> Categoria</label> <br>
