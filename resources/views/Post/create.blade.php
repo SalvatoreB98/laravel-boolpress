@@ -16,7 +16,7 @@
             </div>
             <div class="form-group">
                 <label for="title"> AUTORE </label> <br>
-                <input type="text" name="title" id="title" value="">
+                <input type="text" name="author" id="title" value="">
             </div>
             <button type="submit" class="btn btn-primary"> CREA </button>
         </form>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-lg">
-    <form action="{{ route('post.update', $post['id']) }}" method="post">
+    <form action="{{ route('post.update', $post['id']) }}" method="post" class="mb-3">
         @method('PATCH')
         @csrf
         <div class="form-group">
@@ -14,16 +14,17 @@
         </div>
         <div class="form-group">
             <label for="title"> AUTORE </label> <br>
-            <input type="text" name="title" id="title" value="{{ $post['title'] }}">
+            <input type="text" name="author" id="title" value="{{ $post['author] }}">
         </div>
         <button type="submit" class="btn btn-primary"> Modifica </button>
-        <form class="d-inline-block" action="{{ route('post.destroy', ['id' => $post->id]) }}" method="post">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger delete">
-                Elimina
-            </button>
-        </form>
+    </form>
+    <form class="d-inline-block" action="{{ route('post.destroy', ['id' => $post->id]) }}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger delete">
+            Elimina
+        </button>
+    </form>
 
 </div>
 
