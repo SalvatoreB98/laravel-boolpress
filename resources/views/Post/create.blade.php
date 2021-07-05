@@ -17,10 +17,19 @@
         <div class="form-group">
             <label for="category"> Categoria</label> <br>
             <select name="category_id">
-            @foreach($categories as $category)
+                @foreach($categories as $category)
                 <option value="{{$category->id}}">{{$category->name}}</option>
-            @endforeach
+                @endforeach
             </select>
+            {{-- TAG CHECHBOX --}}
+            <div class="mt-4"> <label for="">Tags:</label></div>
+            @foreach($tags as $tag)
+            <div class="form-check form-check-inline">
+                <label class="form-check-label">{{$tag->name}}
+                    <input type="checkbox" name="tags[]" value="{{$tag->id}}">
+                </label>
+            </div>
+            @endforeach
         </div>
         <button type="submit" class="btn btn-primary"> CREA </button>
     </form>
