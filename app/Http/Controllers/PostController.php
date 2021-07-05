@@ -21,6 +21,9 @@ class PostController extends Controller
         $newPost = new Post();
         $newPost->fill($formData);
         $newPost->save();
+        if(key_exists("tags",$formData)){
+            $newPost->tags()->attach($formData["tags"]);
+        }
         return redirect('home');
     }
     public function show($id){

@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Whoops\Run;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +18,8 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', 'mainController@index')->name('main');
 
 Auth::routes();  
+
+Route::get('/tags','TagController@show')->name('tags');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -31,5 +36,6 @@ Route::get('/admin/edit/{id}', 'PostController@edit')->name('post.edit');
 Route::match(['PUT','PATCH'],'/update/{id}','PostController@update')->name('post.update');
 
 Route::delete('/admin/destroy/{id}', 'PostController@destroy')->name('post.destroy');
+
 
 
