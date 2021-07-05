@@ -1,18 +1,19 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-fluid">
+         <div class="mt-2 mb-4 text-right" > <a href="{{ url()->previous() }}" class="btn btn-primary ">Torna indietro </a></div>   
     <h1>{{ $post->title }}</h1>
     <p>{!! nl2br(e($post->body)) !!}</p>
-    <div class=" mt-4"> Categoria:  <i> {{$post->category ? $post->category->name : 'nessuna categoria'}} </i></div>
+    <div class=" mt-4"> Categoria: <i> {{$post->category ? $post->category->name : 'nessuna categoria'}} </i></div>
 
     @if($user != null)
     <p>By: {{$user ->name}} ({{$user->email}})</p>
     @endif
 
     <div class=" mt-4">
-        Tags: 
+        Tags:
         @foreach($post->tags as $tag)
-            <span class="badge badge-primary d-inline-block p-2">{{$tag->name}}</span>
+        <span class="badge badge-secondary d-inline-block p-2">{{$tag->name}}</span>
         @endforeach
     </div>
 

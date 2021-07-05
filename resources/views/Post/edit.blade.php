@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-lg">
+
+     <div class="mt-2 mb-4 text-right" > <a href="{{ url()->previous() }}" class="btn btn-primary ">Torna indietro </a></div>   
     <form action="{{ route('post.update', $post['id']) }}" method="post" class="mb-3">
         @method('PATCH')
         @csrf

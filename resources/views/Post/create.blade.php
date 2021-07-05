@@ -3,6 +3,8 @@
 
 
 <div class="container-lg">
+
+     <div class="mt-2 mb-4 text-right" > <a href="{{ url()->previous() }}" class="btn btn-primary ">Torna indietro </a></div>   
     <form action="{{ route('post.store') }}" method="post">
         @method('PUT')
         @csrf

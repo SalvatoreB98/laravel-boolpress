@@ -48,7 +48,7 @@ class PostController extends Controller
             $post->tags()->attach($formData["tags"]);
         }
         $post->update($formData);
-        return redirect('home');
+        return redirect()->to('post/'. $id);
     }
     public function destroy($id){
         $post = Post::findOrFail($id);
