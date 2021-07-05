@@ -43,25 +43,32 @@
 
             @endif
             @foreach ($posts as $post)
-            <div class="mb-5">
-                <h1>{{ $post['title'] }}</h1>
+            <div class="mb-5 d-flex">
+                <div>
 
-                <p>{!! nl2br(e($post->body)) !!}</p>
-                <a href="{{ route('post.show', $post['id']) }}" class="btn btn-secondary"> Dettagli </a>
-                @auth
+                    <h1>{{ $post['title'] }}</h1>
+                    <p>{!! nl2br(e($post->body)) !!}</p>
+                    <a href="{{ route('post.show', $post['id']) }}" class="btn btn-secondary"> Dettagli </a>
+                    @auth
 
-                <a href="{{ route('post.edit', $post['id']) }}" class="btn btn-primary">Modifica</a>
-                <form class="d-inline-block" action="{{ route('post.destroy', ['id' => $post->id]) }}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger delete">
-                        Elimina
-                    </button>
-                </form>
+                    <a href="{{ route('post.edit', $post['id']) }}" class="btn btn-primary">Modifica</a>
 
-                <hr>
-                @endauth
+                    <form class="d-inline-block" action="{{ route('post.destroy', ['id' => $post->id]) }}" method="post">
+
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger delete">
+                            Elimina
+                        </button>
+
+                    </form>
+                    @endauth
+                </div>
+                <div>
+                    <img class="poster" src="{{$post->url}}" alt="" style="max-width:250px;">
+                </div>
             </div>
+            <hr>
             @endforeach
         </div>
     </div>

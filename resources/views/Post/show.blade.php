@@ -1,7 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-fluid">
-         <div class="mt-2 mb-4 text-right" > <a href="{{ url()->previous() }}" class="btn btn-primary ">Torna indietro </a></div>   
+    <div class="mt-2 mb-4 text-right"> <a href="{{ url()->previous() }}" class="btn btn-primary ">Torna indietro </a></div>
+    <div><img src="{{$post->url}}" alt="" class="mb-5"></div>
     <h1>{{ $post->title }}</h1>
     <p>{!! nl2br(e($post->body)) !!}</p>
     <div class=" mt-4"> Categoria: <i> {{$post->category ? $post->category->name : 'nessuna categoria'}} </i></div>
@@ -16,7 +17,6 @@
         <span class="badge badge-secondary d-inline-block p-2">{{$tag->name}}</span>
         @endforeach
     </div>
-
     @auth
     <hr>
     <div class="mt-5">

@@ -75,11 +75,11 @@
         <main class="py-4 d-flex">
             <aside class="ml-3 flex-shrink-0">
                 <ul class="list-unstyled">
-                    <li class="p-2"><a href=""><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
+                    <li class="p-2"><a href="{{route('home')}}"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
                     <li class="p-2"><a href=""><i class="fa fa-tags" aria-hidden="true"></i> Tags </i></a></li>
-                    @auth
-                    <li class="p-2"><a href=""><i class="fa fa-plus" aria-hidden="true"></i> Add new Post</a></li>
                     <li class="p-2"><a href=""><i class="fa fa-list-alt" aria-hidden="true"></i> Categories</a></li>
+                    @auth
+                    <li class="p-2"><a href="{{route('post.create')}}"><i class="fa fa-plus" aria-hidden="true"></i> Add new Post</a></li>
                     @endauth
                 </ul>
             </aside>

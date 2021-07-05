@@ -10,11 +10,15 @@
         @csrf
         <div class="form-group">
             <label for="title"> TITOLO </label> <br>
-            <input type="text" name="title" id="title">
+            <input class="form-control" type="text" name="title" id="title">
         </div>
         <div class="form-group">
             <label for="title"> DESCRIZIONE </label> <br>
             <textarea class="form-control" name="body" id="" cols="30" rows="10" style="white-space: pre-wrap;"> </textarea>
+        </div>
+         <div class="form-group">
+            <label for="title"> IMG URL </label> <br>
+            <input class="form-control" type="text" name="url" id="url">
         </div>
         <div class="form-group">
             <label for="category"> Categoria</label> <br>

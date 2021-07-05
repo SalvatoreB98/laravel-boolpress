@@ -12,8 +12,13 @@
         </div>
 
         <div class="form-group">
-            <label for="title"> DESCRIZIONE </label> <br>
-            <textarea class="form-control" name="body" id="" wrap="hard" rows="10" style="white-space: pre-wrap; min-width: 75%' ">{{ $post['body'] }} </textarea>
+            <label for="body"> DESCRIZIONE </label> <br>
+            <textarea class="form-control" name="body" id="body" wrap="hard" rows="10" style="white-space: pre-wrap; min-width: 75%' ">{{ $post['body'] }} </textarea>
+        </div>
+
+         <div class="form-group">
+            <label for="url"> IMG URL </label> <br>
+            <input class="form-control" type="text" name="url" id="url" value="{{$post['url']}}">
         </div>
 
         {{-- CATEGORY --}}
