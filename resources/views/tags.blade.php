@@ -15,7 +15,7 @@
                <tr>
                 <td>{{$tag->id}}</td>
                 <td>{{$tag->name}}</td>
-                <td>@dump(count($tag->posts))</td>
+                <td>{{count($tag->posts)}}</td>
             </tr>
         @endforeach
         </tbody>
