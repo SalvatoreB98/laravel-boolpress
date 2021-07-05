@@ -64,7 +64,7 @@
                     </form>
                     @endauth
                 </div>
-                <div>
+                <div class="p-2 align-self-center">
                     <img class="poster" src="{{$post->url}}" alt="" style="max-width:250px;">
                 </div>
             </div>

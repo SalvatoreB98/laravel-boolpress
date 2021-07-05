@@ -75,7 +75,7 @@
         <main class="py-4 d-flex">
             <aside class="ml-3 flex-shrink-0">
                 <ul class="list-unstyled">
-                    <li class="p-2"><a href="{{route('home')}}"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
+                    <li class="p-2"><a href="{{route('main')}}"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
                     <li class="p-2"><a href=""><i class="fa fa-tags" aria-hidden="true"></i> Tags </i></a></li>
                     <li class="p-2"><a href=""><i class="fa fa-list-alt" aria-hidden="true"></i> Categories</a></li>
                     @auth
