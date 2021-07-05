@@ -4,7 +4,7 @@
 @auth
 <div class="container-fluid">
     <div class="container-fluid justify-content-center">
-        <div class="col-md-12">
+        <div class="">
             <div class="card">
                 <div class="card-header">{{ __('Area:') }}</div>
 
