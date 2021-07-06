@@ -15,7 +15,7 @@ use Whoops\Run;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'mainController@index')->name('main');
+Route::get('/', 'MainController@index')->name('main');
 
 Auth::routes();  
 

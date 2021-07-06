@@ -24,7 +24,7 @@ class PostController extends Controller
         if(key_exists("tags",$formData)){
             $newPost->tags()->attach($formData["tags"]);
         }
-        return redirect('home');
+        return redirect('admin.posts');
     }
     public function show($id){
         $post = Post::findOrFail($id);
@@ -57,6 +57,6 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $post->tags()->detach();
         $post->delete();
-        return redirect('home');
+        return redirect('admin.posts');
     }
 }
