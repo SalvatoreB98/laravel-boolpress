@@ -24,7 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('home') }}">
+                <a class="navbar-brand" href="{{ route('main') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -76,8 +76,8 @@
             <aside class="ml-3 flex-shrink-0">
                 <ul class="list-unstyled">
                     <li class="p-2"><a href="{{route('main')}}"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
-                    <li class="p-2"><a href=""><i class="fa fa-list-alt" aria-hidden="true"></i> Categories</a></li>
                     @auth
+                    <li class="p-2"><a href="{{route('posts')}}"><i class="fa fa-list-alt" aria-hidden="true"></i> Post List </a></li>
                     <li class="p-2"><a href="{{route('tags')}}"><i class="fa fa-tags" aria-hidden="true"></i> Tags </i></a></li>
                     <li class="p-2"><a href="{{route('admin.user')}}"><i class="fa fa-users" aria-hidden="true"></i> Users</a></li>
                     <li class="p-2"><a href="{{route('post.create')}}"><i class="fa fa-plus" aria-hidden="true"></i> Crea un nuovo post</a></li>

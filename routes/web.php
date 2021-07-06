@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::get('/tags','TagController@show')->name('tags');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/posts', 'HomeController@index')->name('posts');
 
 Route::get('/create','PostController@create')->name('post.create');
 

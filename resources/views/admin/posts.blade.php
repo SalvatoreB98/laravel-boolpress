@@ -47,7 +47,7 @@
                 <div class="flex-fill w-75 m-auto">
 
                     <h1>{{ $post['title'] }}</h1>
-                    <p>{!! nl2br(e($post->body)) !!}</p>
+                    <p> {!! \Illuminate\Support\Str::limit(nl2br(e($post->body)) , 400, $end='...') !!}</p>
                     <a href="{{ route('post.show', $post['id']) }}" class="btn btn-secondary"> Dettagli <i class="fa fa-info" aria-hidden="true"></i> </a>
                     @auth
 

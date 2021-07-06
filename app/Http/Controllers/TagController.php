@@ -8,6 +8,6 @@ class TagController extends Controller
 {
     function show(){
         $tags = Tag::all();
-        return view('tags',compact('tags'));
+        return view('admin.tags',compact('tags'));
     }
 }
