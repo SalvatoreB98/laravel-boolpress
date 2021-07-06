@@ -8,7 +8,12 @@ use App\UserDetail;
 class UsersController extends Controller
 {
     function index(Request $request){
+        $user = $request->user();
         $userDetails = $request->user()->details;
-        return view("admin.user",compact('userDetails'));
+        $data = [
+            "userDetails" => $userDetails,
+            "user" =>  $user
+        ];
+        return view("admin.user",$data);
     }
 }
