@@ -2,9 +2,9 @@
 
 @section('content')
 @auth
-<div class="container-fluid">
-    <div class="container-fluid justify-content-center">
-        <div class="">
+<div class="container-fluid p-5">
+    <div class="justify-content-center">
+        <div class="post">
             <div class="card">
                 <div class="card-header">{{ __('Area:') }}</div>
 
@@ -20,12 +20,12 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div>
         @endauth
 
 
         @auth
-        <div class="card  mt-5 mb-5">
+        <div class="card post mt-5 mb-5">
             <div class="card-header">
                 AGGIUNGI UN NUOVO POST
             </div>
@@ -37,14 +37,14 @@
         </div>
         @endauth
 
-        <div class="container-fluid">
+        <div>
             @if(count($posts)==0)
             <h5>Ancora nessun post disponibile</h5>
 
             @endif
             @foreach ($posts as $post)
-            <div class="mb-5 d-flex">
-                <div>
+            <div class="post mb-5 d-flex">
+                <div class="flex-fill w-75 m-auto">
 
                     <h1>{{ $post['title'] }}</h1>
                     <p>{!! nl2br(e($post->body)) !!}</p>

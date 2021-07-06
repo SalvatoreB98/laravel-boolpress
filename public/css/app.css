@@ -10942,3 +10942,8 @@ a.text-dark:focus {
   }
 }
 
+.post {
+  max-width: 1000px;
+  margin: auto;
+}
+

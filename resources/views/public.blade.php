@@ -6,7 +6,7 @@
         <div class="title m-b-md">
         </div>
 
-        <div class="container-fluid">
+        <div class="container-fluid ">
             @foreach($posts as $post)
                        <div class="mb-5 d-flex">
                 <div>
