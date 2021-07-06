@@ -15,7 +15,7 @@
                     <p> {!! \Illuminate\Support\Str::limit(nl2br(e($post->body)) , 750, $end='...') !!} </p>
                     <a href="{{ route('post.show', $post['id']) }}" class=""> Continua a leggere </a>
                 </div>
-                <div class="p-2 align-self-center">
+                <div class="p-5 align-self-center">
                     <img class="poster" src="{{$post->url}}" alt="" style="max-width:250px;">
                 </div>
             </div>

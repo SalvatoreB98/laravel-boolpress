@@ -3,7 +3,7 @@
 <div class="container-fluid flex-fill ">
     <div class="mt-2 mb-4 text-right"> <a href="{{ url()->previous() }}" class="btn btn-primary ">Torna indietro </a></div>
     <div class="w-75 m-auto">
-        <div class="text-center mb-5"><img class=" w-100" src="{{$post->url}}" alt="" class="mb-5"></div>
+        <div class="text-center mb-5"><img class="w-100" src="{{$post->url}}" alt="" class="mb-5" style="max-height:300px; object-fit:contain"></div>
         <h1>{{ $post->title }}</h1>
         <p>{!! nl2br(e($post->body)) !!}</p>
         <div class=" mt-4"> Categoria: <i> {{$post->category ? $post->category->name : 'nessuna categoria'}} </i></div>
