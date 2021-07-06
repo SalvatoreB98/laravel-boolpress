@@ -21,12 +21,12 @@
         @auth
         <hr>
         <div class="mt-5">
-            <a href="{{ route('post.edit', $post['id']) }}" class="btn btn-primary">Modifica</a>
+            <a href="{{ route('post.edit', $post['id']) }}" class="btn btn-primary">Modifica <i class="fa fa-pencil" aria-hidden="true"></i></a>
             <form class="d-inline-block" action="{{ route('post.destroy', ['id' => $post->id]) }}" method="post">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger delete">
-                    Elimina
+                    Elimina <i class="fa fa-trash" aria-hidden="true"></i>
                 </button>
             </form>
         </div>

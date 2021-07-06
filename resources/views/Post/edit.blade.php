@@ -43,7 +43,7 @@
         <br>
 
         <div class="mt-3 d-inline-block">
-            <button type="submit" class="btn btn-primary"> Modifica </button>
+            <button type="submit" class="btn btn-primary"> Modifica <i class="fa fa-pencil" aria-hidden="true"></i> </button>
         </div>
 
     </form>
@@ -52,7 +52,7 @@
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger delete">
-            Elimina
+            Elimina <i class="fa fa-trash" aria-hidden="true"></i>
         </button>
     </form>
 

@@ -37,5 +37,6 @@ Route::match(['PUT','PATCH'],'/update/{id}','PostController@update')->name('post
 
 Route::delete('/admin/destroy/{id}', 'PostController@destroy')->name('post.destroy');
 
+Route::get('/user','UsersController@index')->name("admin.user");
 
 

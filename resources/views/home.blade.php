@@ -32,12 +32,12 @@
 
             <div class="card-body">
                 <h5 class="card-title"> Crea da zero un nuovo post</h5>
-                <a href="{{route('post.create')}}" class="btn btn-primary"> ADD </a>
+                <a href="{{route('post.create')}}" class="btn btn-primary"> Crea </a>
             </div>
         </div>
         @endauth
 
-        <div>
+        <div class="post">
             @if(count($posts)==0)
             <h5>Ancora nessun post disponibile</h5>
 
@@ -48,23 +48,23 @@
 
                     <h1>{{ $post['title'] }}</h1>
                     <p>{!! nl2br(e($post->body)) !!}</p>
-                    <a href="{{ route('post.show', $post['id']) }}" class="btn btn-secondary"> Dettagli </a>
+                    <a href="{{ route('post.show', $post['id']) }}" class="btn btn-secondary"> Dettagli <i class="fa fa-info" aria-hidden="true"></i> </a>
                     @auth
 
-                    <a href="{{ route('post.edit', $post['id']) }}" class="btn btn-primary">Modifica</a>
+                    <a href="{{ route('post.edit', $post['id']) }}" class="btn btn-primary">Modifica <i class="fa fa-pencil" aria-hidden="true"></i></a>
 
                     <form class="d-inline-block" action="{{ route('post.destroy', ['id' => $post->id]) }}" method="post">
 
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger delete">
-                            Elimina
+                            Elimina <i class="fa fa-trash" aria-hidden="true"></i>
                         </button>
 
                     </form>
                     @endauth
                 </div>
-                <div class="p-2 align-self-center">
+                <div class="p-2">
                     <img class="poster" src="{{$post->url}}" alt="" style="max-width:250px;">
                 </div>
             </div>
