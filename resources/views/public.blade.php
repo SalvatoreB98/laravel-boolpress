@@ -8,6 +8,11 @@
         </div>
 
         <div class="container-fluid ">
+
+            @if(count($posts)==0)
+            <h5>Ancora nessun post disponibile</h5>
+            @endif
+
             @foreach($posts as $post)
             <div class="mb-5 d-flex">
                 <div>

@@ -40,7 +40,6 @@
         <div class="post">
             @if(count($posts)==0)
             <h5>Ancora nessun post disponibile</h5>
-
             @endif
             @foreach ($posts as $post)
             <div class="post mb-5 d-flex">
