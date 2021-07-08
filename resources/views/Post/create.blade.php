@@ -4,19 +4,30 @@
 
 <div class="container-lg">
 
-     <div class="mt-2 mb-4 text-right" > <a href="{{ url()->previous() }}" class="btn btn-primary ">Torna indietro </a></div>   
+    <div class="mt-2 mb-4 text-right"> <a href="{{ url()->previous() }}" class="btn btn-primary ">Torna indietro </a></div>
+    <div>
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+    </div>
     <form action="{{ route('post.store') }}" method="post">
         @method('PUT')
         @csrf
         <div class="form-group">
             <label for="title"> TITOLO </label> <br>
-            <input class="form-control" type="text" name="title" id="title">
+            <input class="form-control" type="text" name="title" id="title" value="{{ old('title') }}">
         </div>
         <div class="form-group">
             <label for="title"> DESCRIZIONE </label> <br>
-            <textarea class="form-control" name="body" id="" cols="30" rows="10" style="white-space: pre-wrap;"> </textarea>
+            <textarea class="form-control" name="body" id="" cols="30" rows="10" style="white-space: pre-wrap;"> {{ old('body') }} </textarea>
         </div>
-         <div class="form-group">
+        <div class="form-group">
             <label for="title"> IMG URL </label> <br>
             <input class="form-control" type="text" name="url" id="url">
         </div>

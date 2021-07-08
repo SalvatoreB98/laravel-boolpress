@@ -3,7 +3,7 @@
 <div class="container-lg">
 
      <div class="mt-2 mb-4 text-right" > <a href="{{ url()->previous() }}" class="btn btn-primary ">Torna indietro </a></div>   
-    <form action="{{ route('post.update', $post['id']) }}" method="post" class="mb-3">
+    <form action="{{ route('post.update', $post['id']) }}" method="post" class="mb-3" enctype='multipart/form-data'>
         @method('PATCH')
         @csrf
         <div class="form-group">
@@ -20,6 +20,10 @@
             <label for="url"> IMG URL </label> <br>
             <input class="form-control" type="text" name="url" id="url" value="{{$post['url']}}">
         </div>
+          <div class="form-group">
+            <label for="url"> Carica file: </label> <br>
+            <input class="" type="file" name="file" id="file">
+        </div>   
 
         {{-- CATEGORY --}}
         <div class="mt-4"> <label for="">Category:</label></div>
