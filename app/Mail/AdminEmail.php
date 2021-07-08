@@ -27,7 +27,9 @@ class AdminEmail extends Mailable
      */
     public function build()
     {
-
-        return $this->subject($this->formData->body)->view('emailForAdmin',$this->email);
+        $data = [ 
+           "email" => $this->email
+        ];
+        return $this->subject($data["email"]["body"])->view('mail.emailForAdmin',$data);
     }
 }

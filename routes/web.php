@@ -42,4 +42,4 @@ Route::get('/user','UsersController@index')->name("admin.user");
 
 Route::get('/sendaAnEmail', 'MailController@index')->name("sendMail.index");
 
-Route::get('/sendaAnEmail/send', 'MailController@send')->name("sendMail.send");
+Route::post('/sendaAnEmail/send', 'MailController@send')->name("sendMail.send");

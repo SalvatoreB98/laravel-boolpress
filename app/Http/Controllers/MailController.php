@@ -16,6 +16,6 @@ class MailController extends Controller
         $data = $request->all();
         $admin = User::findOrFail(1);
         Mail::to($admin['email'])->send(new AdminEmail($data));
-        return redirect("public");
+        return redirect("/");
     }
 }

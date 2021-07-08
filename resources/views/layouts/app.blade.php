@@ -76,6 +76,7 @@
             <aside class="ml-3 flex-shrink-0">
                 <ul class="list-unstyled">
                     <li class="p-2"><a href="{{route('main')}}"><i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
+                    <li class="p-2"><a href="{{route('sendMail.index')}}"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Contattaci </a></li>
                     @auth
                     <li class="p-2"><a href="{{route('posts')}}"><i class="fa fa-list-alt" aria-hidden="true"></i> Post List </a></li>
                     {{-- <li class="p-2"><a href="{{route('admin.user')}}"><i class="fa fa-users" aria-hidden="true"></i> Profilo Utente</a></li> --}}
