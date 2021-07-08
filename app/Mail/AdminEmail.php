@@ -7,18 +7,17 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class WelcomeMail extends Mailable
+class AdminEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $user;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($datiUtente) {
-        $this->user = $datiUtente;
+    public function __construct($formData) {
+        $this->email = $formData;
     }
 
     /**
@@ -28,6 +27,7 @@ class WelcomeMail extends Mailable
      */
     public function build()
     {
-        return $this->subject("Benvenuto " . $this->user->name . "!")->view('mail.welcome');
+
+        return $this->subject($this->formData->body)->view('emailForAdmin',$this->email);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -39,4 +40,6 @@ Route::delete('/admin/destroy/{id}', 'PostController@destroy')->name('post.destr
 
 Route::get('/user','UsersController@index')->name("admin.user");
 
+Route::get('/sendaAnEmail', 'MailController@index')->name("sendMail.index");
 
+Route::get('/sendaAnEmail/send', 'MailController@send')->name("sendMail.send");

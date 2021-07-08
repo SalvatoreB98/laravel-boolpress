@@ -80,6 +80,7 @@
                     <li class="p-2"><a href="{{route('posts')}}"><i class="fa fa-list-alt" aria-hidden="true"></i> Post List </a></li>
                     <li class="p-2"><a href="{{route('tags')}}"><i class="fa fa-tags" aria-hidden="true"></i> Tags </i></a></li>
                     <li class="p-2"><a href="{{route('admin.user')}}"><i class="fa fa-users" aria-hidden="true"></i> Profilo Utente</a></li>
+                    @yield('email-link')
                     <li class="p-2"><a href="{{route('post.create')}}"><i class="fa fa-plus" aria-hidden="true"></i> Crea un nuovo post</a></li>
                     @endauth
                 </ul>

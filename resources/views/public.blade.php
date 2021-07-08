@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('email-link')
+<li class="p-2"><a href="{{route('admin.user')}}"><i class="fa fa-users" aria-hidden="true"></i> Profilo Utente</a></li>
+@endsection
 @section('content')
 <div class="flex-center position-ref full-height">
 
@@ -8,7 +11,7 @@
 
         <div class="container-fluid ">
             @foreach($posts as $post)
-                       <div class="mb-5 d-flex">
+            <div class="mb-5 d-flex">
                 <div>
 
                     <h1>{{ $post['title'] }}</h1>
