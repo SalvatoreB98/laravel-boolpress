@@ -1,7 +1,5 @@
 @extends('layouts.app')
 @section('email-link')
-<li class="p-2"><a href="{{route('admin.user')}}"><i class="fa fa-users" aria-hidden="true"></i> Profilo Utente</a></li>
-@endsection
 @section('content')
 <div class="flex-center position-ref full-height">
 
