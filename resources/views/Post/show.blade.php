@@ -5,7 +5,10 @@
     <div class="w-75 m-auto">
         <div class="text-center mb-5"><img class="w-100" src="{{$post->url}}" alt="" class="mb-5" style="max-height:300px; object-fit:contain"></div>
         <h1>{{ $post->title }}</h1>
-        <p>{!! nl2br(e($post->body)) !!}</p>
+        <p>
+            <img src="{{asset('storage/' . $post->file)}}" class="float-right mt-5" style="max-width:250px" alt="">
+            {!! nl2br(e($post->body)) !!}
+        </p>
         <div class=" mt-4"> Categoria: <i> {{$post->category ? $post->category->name : 'nessuna categoria'}} </i></div>
 
         @if($user != null)

@@ -7,6 +7,7 @@ use App\Category;
 use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
 {
@@ -68,9 +69,15 @@ class PostController extends Controller
         $formData = $request->all();
         $post = Post::findOrFail($id);
         $post->tags()->detach();
-        // Storage::put("files",$formData["file"]);
         if (key_exists("tags", $formData)) {
             $post->tags()->attach($formData["tags"]);
+        }
+        if (key_exists("file", $formData)) {
+            if ($post->file) {
+                Storage::delete($post->file);
+            }
+            $storageResult = Storage::put("files", $formData["file"]);
+            $post->file = $storageResult;
         }
         $post->update($formData);
         return redirect()->to('post/' . $id);
@@ -78,6 +85,9 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
+        if ($post->file) {
+            Storage::delete($post->file);
+        }
         $post->tags()->detach();
         $post->delete();
         return redirect('/admin/posts');
