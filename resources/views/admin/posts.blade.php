@@ -42,7 +42,7 @@
             <h5>Ancora nessun post disponibile</h5>
             @endif
             @foreach ($posts as $post)
-            <div class="post mb-5 d-flex">
+            <div class="post mb-5 d-flex justify-content-between">
                 <div class="flex-fill w-75 m-auto">
 
                     <h1>{{ $post['title'] }}</h1>

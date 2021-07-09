@@ -14,7 +14,7 @@
             @endif
 
             @foreach($posts as $post)
-            <div class="mb-5 d-flex">
+            <div class="mb-5 d-flex justify-content-between">
                 <div>
 
                     <h1>{{ $post['title'] }}</h1>

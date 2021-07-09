@@ -18,6 +18,7 @@ class PostController extends Controller
             "categories" => $categories,
             "tags" => $tags
         ];
+
         return view("post.create", $data);
     }
     public function store(Request $request)
@@ -27,13 +28,20 @@ class PostController extends Controller
             'body' => 'required',
             'category_id' => "nullable|exists:categories,id"
         ]);
+
         $formData = $request->all();
         $newPost = new Post();
         $newPost->fill($formData);
+
+        if (key_exists("file", $formData)) {
+            $storageResult = Storage::put("files", $formData["file"]);
+            $newPost->file = $storageResult;
+        }
         $newPost->save();
         if (key_exists("tags", $formData)) {
             $newPost->tags()->attach($formData["tags"]);
         }
+        @dump($formData);
         return redirect('/');
     }
     public function show($id)
@@ -72,6 +80,6 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $post->tags()->detach();
         $post->delete();
-        return redirect('/');
+        return redirect('/admin/posts');
     }
 }

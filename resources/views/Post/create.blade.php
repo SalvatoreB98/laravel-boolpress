@@ -16,7 +16,7 @@
         </div>
         @endif
     </div>
-    <form action="{{ route('post.store') }}" method="post">
+    <form action="{{ route('post.store') }}" method="post" enctype='multipart/form-data'>
         @method('PUT')
         @csrf
         <div class="form-group">
@@ -40,6 +40,12 @@
             </select>
             {{-- TAG CHECHBOX --}}
             <div class="mt-4"> <label for="">Tags:</label></div>
+
+            <div class="form-group">
+                <label for="url"> Carica file: </label> <br>
+                <input class="" type="file" name="file" id="file">
+            </div>
+            
             @foreach($tags as $tag)
             <div class="form-check form-check-inline">
                 <label class="form-check-label">{{$tag->name}}
