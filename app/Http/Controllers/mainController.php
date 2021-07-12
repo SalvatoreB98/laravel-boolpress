@@ -8,7 +8,7 @@ class MainController extends Controller
 {
     public function index() {
         $data = [
-            'posts' => Post::all()
+            'posts' => Post::all()->sortByDesc('created_at')
         ];
         return view('public',$data);
     }

@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         $data = [
-            'posts' => Post::all()
+            'posts' => Post::all()->sortByDesc('created_at')
         ];
         return view('admin.posts',$data);
     }

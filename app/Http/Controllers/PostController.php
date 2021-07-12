@@ -42,7 +42,6 @@ class PostController extends Controller
         if (key_exists("tags", $formData)) {
             $newPost->tags()->attach($formData["tags"]);
         }
-        @dump($formData);
         return redirect('/');
     }
     public function show($id)
