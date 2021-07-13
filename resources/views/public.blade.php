@@ -12,7 +12,9 @@
             @if(count($posts)==0)
             <h5>Ancora nessun post disponibile</h5>
             @endif
-
+            <div v-for="i in 10" :key="i">
+                <span v-text="i"> </span>
+            </div>
             @foreach($posts as $post)
             <div class="mb-5 d-flex justify-content-between">
                 <div>
